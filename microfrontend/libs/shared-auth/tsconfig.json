@@ -1,0 +1,10 @@
+{
+  "extends": "../../shell/tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../../out-tsc/lib",
+    "types": ["vitest/globals"]
+  },
+  "include": [
+    "src/**/*.ts"
+  ]
+}

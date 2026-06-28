@@ -1,0 +1,12 @@
+{
+  "name": "plugin-banking-platform",
+  "private": true,
+  "workspaces": [
+    "host-app",
+    "sample-plugin"
+  ],
+  "scripts": {
+    "host": "npm run start --workspace=host-app",
+    "sample-plugin": "npm run build --workspace=sample-plugin"
+  }
+}

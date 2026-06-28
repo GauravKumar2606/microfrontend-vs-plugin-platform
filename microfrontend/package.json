@@ -1,0 +1,13 @@
+{
+  "name": "core-banking-microfrontend",
+  "private": true,
+  "workspaces": [
+    "shell",
+    "apps/*",
+    "libs/*"
+  ],
+  "scripts": {
+    "shell": "npm run start --workspace=shell",
+    "onboarding": "npm run start --workspace=onboarding"
+  }
+}

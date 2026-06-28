@@ -1,0 +1,19 @@
+{
+    "permissions": {
+        "allow": [
+            "Bash(*)",
+            "Write(*)",
+            "Read(*)",
+            "PowerShell(*)"
+        ],
+        "deny": [
+            "Bash(rm -rf *)",
+            "Bash(rm -f *)",
+            "Bash(del /f *)",
+            "Bash(rmdir /s *)",
+            "PowerShell(Remove-Item *)",
+            "PowerShell(rd /s *)"
+        ],
+        "defaultMode": "bypassPermissions"
+    }
+}
