@@ -1,6 +1,6 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Router, Routes, Component } from '@angular/router';
+import { Router, Routes } from '@angular/router';
 import { Observable, from, switchMap, tap } from 'rxjs';
 import { loadRemoteModule } from '@angular-architects/native-federation';
 import { AuthGuard } from 'shared-auth';
@@ -21,17 +21,7 @@ export class ManifestService {
           loadComponent: () =>
             loadRemoteModule(appName, './Component')
               .then(m => m.AppComponent)
-              .catch(() => {
-                // Return a component factory that renders the unavailable card
-                const name = appName.charAt(0).toUpperCase() + appName.slice(1);
-                @Component({
-                  standalone: true,
-                  imports: [UnavailableModuleComponent],
-                  template: `<app-unavailable-module moduleName="${name}" />`
-                })
-                class FallbackComponent {}
-                return FallbackComponent;
-              })
+              .catch(() => UnavailableModuleComponent)
         }));
 
         const defaultApp = appNames[0] ?? 'login';
